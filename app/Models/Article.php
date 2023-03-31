@@ -17,4 +17,9 @@ class Article extends Model
         $this->completed = true;
         $this->save();
     }
+
+    public function path()
+    {
+        return route('articles.show', $this);
+    }
 }
