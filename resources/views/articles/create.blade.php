@@ -15,7 +15,17 @@
                     Title
                 </div>
                 <div class="control">
-                    <input type="text" name="title" class="input" id="title">
+                    <input
+                        class="input @error('title') is-danger @enderror"
+                        type="text"
+                        name="title"
+                        id="title"
+                        value="{{old('title')}}"
+                    >
+
+                    @error('title')
+                        <p class="help is-danger">{{$errors->first('title')}}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -24,7 +34,12 @@
                     Excerpt
                 </div>
                 <div class="control">
-                    <textarea class="textarea" name="excerpt" id="" cols="30" rows="10"></textarea>
+                    <textarea class="textarea @error('excerpt') is-danger @enderror" name="excerpt" id="" cols="30" rows="10">
+                        {{old('excerpt')}}
+                    </textarea>
+                    @error('excerpt')
+                    <p class="help is-danger">{{$errors->first('excerpt')}}</p>
+                    @enderror
                 </div>
             </div>
 
@@ -33,7 +48,12 @@
                     Body
                 </div>
                 <div class="control">
-                    <textarea class="textarea" name="body" id="" cols="30" rows="10"></textarea>
+                    <textarea class="textarea  @error('body') is-danger @enderror" name="body" id="" cols="30" rows="10">
+                        {{old('body')}}
+                    </textarea>
+                    @error('body')
+                    <p class="help is-danger">{{$errors->first('body')}}</p>
+                    @enderror
                 </div>
             </div>
 
