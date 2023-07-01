@@ -15,6 +15,8 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    //  \App\Models\User::factory(3)->create();
     public function definition()
     {
         return [
@@ -25,6 +27,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
+
 
     /**
      * Indicate that the model's email address should be unverified.
